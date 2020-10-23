@@ -44,10 +44,10 @@ void Remove() {
     else {
         front++;
         printf("Item Removed.\n");
-        if(front == back) {
-            printf("\n\nALL ITEMS REMOVED. TOTAL BILL IS :-\n\n");
-            sum -= queue[front].price*queue[front].quantity;
-			printf("%d",sum);
+        if(front == back) 
+	{
+            printf("\n\nALL ITEMS REMOVED. TOTAL BILL IS :-\n");
+	    printf("%d",sum);
             getch();
         }
     }
