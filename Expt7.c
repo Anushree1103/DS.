@@ -24,7 +24,7 @@ int main()
     int val;
     while(1)
     {
-        printf("\nMenu:\n1. insert_beg\n2. insert_end\n3. insert_before\n4. \n5. \n6. \n7. display Exit "); 
+        printf("\nMenu:\n1. insert_beg\n2. insert_end\n3. insert_before\n4. Delete_beg \n5. Delete_end \n6. delete_after \n7. search \n8. replace\n9. display \n10. Exit "); 
         printf("\nEnter your choice: ");
         scanf("%d",&ch);
         switch(ch)
@@ -35,11 +35,11 @@ int main()
             break;
             case 3:start=insert_before(start);
             break;
-            case 4:start=delete_beg(node *);
+            case 4:start=delete_beg(start);
             break;
-            case 5:start=delete_end(node *);
+            case 5:start=delete_end(start);
             break;   
-            case 6:start=delete_after(node *);
+            case 6:start=delete_after(start);
             break;   
             case 7:printf("Enter the value to search");
                    scanf("%d",&val);
@@ -199,7 +199,7 @@ node *delete_after(node * start)
         {
             ptr=ptr->next;
         }
-        if(ptr!==NULL)
+        if(ptr!=NULL)
         {
             ptr1=ptr->next;
             ptr->next=ptr->next->next;
