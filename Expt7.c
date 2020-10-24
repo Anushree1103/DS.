@@ -184,7 +184,7 @@ node * delete_end(node * start)
 
 node *delete_after(node * start)
 {
-    node *ptr, *ptr1;
+   node *ptr1, *ptr2;
     int val;
     printf("\nEnter the value after which the node has to be deleted");
     scanf("%d",&val);
@@ -194,20 +194,20 @@ node *delete_after(node * start)
     }
     else
     {
-        ptr=start;
-        while(ptr!=NULL && ptr->data!=val)
+        ptr1=ptr2=start;
+        while(ptr1->data!=val && ptr1->next!=NULL)
         {
-            ptr=ptr->next;
+            ptr1=ptr2;
+            ptr2=ptr2->next;
         }
-        if(ptr!=NULL)
+        if(ptr2==NULL)
         {
-            ptr1=ptr->next;
-            ptr->next=ptr->next->next;
-            free(ptr);
+            printf("No such data to delete!! ");
         }
         else
         {
-            printf("No such data to delete!! ");
+            ptr1->next=ptr2->next;
+            free(ptr2);
         }
     }
     return start;
@@ -250,3 +250,4 @@ node * replace(node * start)
     }
     return start;
 }
+
