@@ -75,5 +75,39 @@ void create()
 void search(struct btnode *t)
 {
     if(temp->value > t->value) && (t->r! = NULL))
+        search(t->r);
+    else if((temp->value >t->value) && (t->r == NULL))
+        t->r = temp;
+    else if((temp->value < t->value) && (t->l != NULL))
+        search(t->l);
+    else if((temp->value < t->value) && (t->l == NULL))
+        t->l = temp;
+}
+
+/*To check for the deleted node */
+void delete()
+{
+    int data;
+    
+    if(root == NULL)
+    {
+        printf("No elements in a tree to delete");
+        return;
+    }
+    printf("Enter the data to be deleted : ");
+    scanf("%d",&data);
+    t1 = root;
+    
+    search(root, data);
+}
+
+/*Search for the appropriate position to delete the node */
+void search1(struct btnode *t, int data)
+{
+    if((data->t->value))
+    {
+        t1 = t;  /*Store the parent node address*/
+        search(t->r, data);  /*search the right subtree*/
+    }
 }
 
