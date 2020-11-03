@@ -53,5 +53,27 @@ int main()
 void insert()
 {
     create();
-    
+    if(root == NULL)
+        root = temp;
+    else
+        search(root);  
 }
+
+/*To create a node */
+void create()
+{
+    int data;
+    
+    printf("Enter data of node to be inserted: ");
+    scanf("%d",&data);
+    temp = (struct btnode *)malloc(sizeof(struct btnode));
+    temp->value = data;
+    temp->l = temp->r =NULL;
+}
+
+/*Function to search the appropriate position to insert the new node */
+void search(struct btnode *t)
+{
+    if(temp->value > t->value) && (t->r! = NULL))
+}
+
