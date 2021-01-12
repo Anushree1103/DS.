@@ -1,3 +1,4 @@
+
 #include<conio.h>
 #include<stdio.h>
 #include<stdlib.h>
@@ -44,10 +45,9 @@ void Remove() {
     else {
         front++;
         printf("Item Removed.\n");
-        if(front == back) 
-	{
-            printf("\n\nALL ITEMS REMOVED. TOTAL BILL IS :-\n");
-	    printf("%d",sum);
+        if(front == back) {
+            printf("\n\nALL ITEMS REMOVED. TOTAL BILL IS :-\n\n");
+	printf("%d",sum);
             getch();
         }
     }
@@ -104,6 +104,4 @@ int main() {
     getch();
 }
  
-   
-
 
