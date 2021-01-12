@@ -1,13 +1,15 @@
+
+#include<conio.h>
 #include<stdio.h>
   void demo_2d();
   void swapping();
   void factadd();
   int fact(int x);
-  
 int main()
 {
    int choice;
-   printf("MENU:\n1.Fcatorial Add\n2.2D Array Demo\n3.Swapping\n4.Exit\nEnter Your Choice: ");
+   clrscr():
+   printf("MENU:\n1.Fcatorial Add\n2.2D Array Demo\n3.Swapping\n4.Exit\nEnter Your         Choice: ");
    scanf("%d",&choice);
    switch(choice)
    {
@@ -38,7 +40,7 @@ void factadd()
     for(i=0;i<n;i++)
     {   
      f=fact(a[i]);
-	 sum=sum+f;
+     sum=sum+f;
     }
     printf("Sum of all factorial is ",sum);
 	
@@ -57,23 +59,21 @@ int fact(int n)
 
 void demo_2d()
 {
-    int a[100][100];
-	int i,j,sum=0;
-	int m,n;
-	printf("Enter the size m and n:");
-	scanf("%d%d",&m,&n);
-    printf("Enter elements of matrix:\n");
-	for(i=0;i<m;i++)
-	{
-	   for(j=0;j<n;j++)
-	   {
-	       scanf("%d",&a[i][j]);
-		   sum=sum+a[i][j];
-	   }  
-	}	  
-	printf("Sum of matrix elements= %d ",sum);  
-	
-
+      int a[100][100];
+      int i,j,sum=0;
+      int m,n;
+      printf("Enter the size m and n:");
+      scanf("%d%d",&m,&n);
+      printf("Enter elements of matrix:\n");
+      for(i=0;i<m;i++)
+      {
+         for(j=0;j<n;j++)
+         {
+            scanf("%d",&a[i][j]);
+            sum=sum+a[i][j];
+          }  
+}	  
+      printf("Sum of matrix elements= %d ",sum);  
 }
 
 
@@ -111,6 +111,4 @@ void swapping()
     {
         printf("%d",a[i]);
     }
-
 }
-
