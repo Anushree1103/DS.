@@ -112,6 +112,5 @@ void swapping()
         printf("%d",a[i]);
     }
 
-
 }
 
