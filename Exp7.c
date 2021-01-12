@@ -14,6 +14,8 @@ node * insert_before(node *);
 node * delete_beg(node *);
 node * delete_end(node *);
 node * delete_after(node *);
+node * search(node *, int val);
+node * replace(node *);
 
 int main()
 {
@@ -22,7 +24,7 @@ int main()
     int val;
     while(1)
     {
-        printf("\nMenu:\n1. insert_beg\n2. insert_end\n3. insert_before\n4. \n5. \n6. \n7. display Exit "); 
+        printf("\nMenu:\n1. insert_beg\n2. insert_end\n3. insert_before\n4. Delete_beg \n5. Delete_end \n6. delete_after \n7. search \n8. replace\n9. display \n10. Exit "); 
         printf("\nEnter your choice: ");
         scanf("%d",&ch);
         switch(ch)
@@ -33,19 +35,20 @@ int main()
             break;
             case 3:start=insert_before(start);
             break;
-            case 4:start=
+            case 4:start=delete_beg(start);
             break;
-            case 5:start=
+            case 5:start=delete_end(start);
             break;   
-            case 6:display(start);
+            case 6:start=delete_after(start);
             break;   
-            case 7:
-            
-            
-            
-            
-            
-            
+            case 7:printf("Enter the value to search");
+                   scanf("%d",&val);
+                   search(start,val);
+            break;
+            case 8:start=replace(start);
+            break;
+            case 9:display(start);
+            break;
             case 10:exit(0);
         }
     }
@@ -181,7 +184,7 @@ node * delete_end(node * start)
 
 node *delete_after(node * start)
 {
-    node *ptr, *ptr1;
+    node *ptr1, *ptr2;
     int val;
     printf("\nEnter the value after which the node has to be deleted");
     scanf("%d",&val);
@@ -191,20 +194,20 @@ node *delete_after(node * start)
     }
     else
     {
-        ptr=start;
-        while(ptr!=NULL && ptr->data!=val)
+        ptr1=ptr2=start;
+        while(ptr1->data!=val && ptr1->next!=NULL)
         {
-            ptr=ptr->next;
+            ptr1=ptr2;
+            ptr2=ptr2->next;
         }
-        if(ptr!==NULL)
+        if(ptr2==NULL)
         {
-            ptr1=ptr->next;
-            ptr->next=ptr->next->next;
-            free(ptr);
+            printf("No such data to delete!! ");
         }
         else
         {
-            printf("No such data to delete!! ");
+            ptr1->next=ptr2->next;
+            free(ptr2);
         }
     }
     return start;
