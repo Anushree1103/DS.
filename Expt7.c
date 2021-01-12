@@ -184,7 +184,7 @@ node * delete_end(node * start)
 
 node *delete_after(node * start)
 {
-   node *ptr1, *ptr2;
+    node *ptr1, *ptr2;
     int val;
     printf("\nEnter the value after which the node has to be deleted");
     scanf("%d",&val);
@@ -250,4 +250,3 @@ node * replace(node * start)
     }
     return start;
 }
-
