@@ -186,7 +186,6 @@ void delete1(struct btnode *t)
         search1(t->r, k);
         t->value = k;
     }
-
 }
 
 /*To find the smallest element in the right sub tree */
