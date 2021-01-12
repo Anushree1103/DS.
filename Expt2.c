@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #define size 5
 
@@ -133,5 +134,4 @@ void display()
      }
    }
 }
-
 
