@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int a[50];
 int binsearch(int low, int high, int key)
 {
@@ -7,7 +6,7 @@ int binsearch(int low, int high, int key)
     while(low<=high)
     {
         mid =(low+high)/2;
-        
+      
         if(a[mid]<key)
         {
             low= mid+1;
@@ -45,5 +44,3 @@ int main()
         printf("Values present at position %d", pos);
     }
 }
-
-
